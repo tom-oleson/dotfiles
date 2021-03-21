@@ -24,6 +24,8 @@ alias ..='cd ..'
 alias md='mkdir'
 alias ~='cd'
 
+alias cls='clear'
+
 # show open internet sockets
 alias inet_sockets='lsof -i -n'
 
