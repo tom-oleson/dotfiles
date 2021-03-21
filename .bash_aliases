@@ -23,3 +23,8 @@ alias ..='cd ..'
 
 # show open internet sockets
 alias inet_sockets='lsof -i -n'
+
+
+alias fury='ssh tpsadmin@fury'
+alias loki='ssh tpsadmin@loki'
+

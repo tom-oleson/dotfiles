@@ -133,3 +133,12 @@ export SDKMAN_DIR="/home/tom/.sdkman"
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+
+if [ -f ~/.functions]; then
+    . ~/.functions
+fi
+
+
