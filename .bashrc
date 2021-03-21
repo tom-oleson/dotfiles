@@ -137,7 +137,7 @@ if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
-if [ -f ~/.functions]; then
+if [ -f ~/.functions ]; then
     . ~/.functions
 fi
 
