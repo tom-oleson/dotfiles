@@ -36,3 +36,5 @@ alias fury='ssh tpsadmin@fury'
 alias loki='ssh tpsadmin@loki'
 alias hulk='ssh tpsadmin@hulk'
 
+alias idea='/home/tom/idea-IC-203.7717.56/bin/idea.sh'
+
