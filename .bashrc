@@ -118,11 +118,13 @@ fi
 
 
 #make it easy to to run executables in current directory
-export PATH=./:~/bin:$PATH:~/idea/idea-IC-193.6911.18/bin
+export PATH=./:~/bin:~/meson:~/usr/local/bin:$PATH:~/idea/idea-IC-193.6911.18/bin
 
 # put shell if vi mode
 set -o vi
 
+# enable autocd
+shopt -s autocd
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/tom/.sdkman"
@@ -135,4 +137,9 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 [[ -s "/home/tom/.aliases" ]] && . ~/.aliases
 [[ -s "/home/tom/.functions" ]] && . ~/.functions
+
+# add the awc function to .basrc
+# use awc like this: awc "3.4+2+8+99.2" (do not forget the quotes)
+awc(){ awk "BEGIN{ print $* }" ;}
+
 

@@ -16,3 +16,48 @@ function weather {
 function rick_roll {
 	curl -s -L http://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash
 }
+
+function ip {
+	[[ ${#} == 1 ]] || { echo "usage: lookup <hostname>"; return 0; }
+	declare hostLine=($(grep ${1} /etc/hosts))
+	echo ${hostLine[0]}
+}
+
+function add-key {
+	[[ ${#} == 1 ]] || { echo "usage: add-key hostname"; return 0; }
+
+	declare userAtIp=tpsadmin@$(ip ${1})
+	echo ${userAtIp}
+	cat ~/.ssh/id_rsa.pub | ssh ${userAtIp} "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
+}
+
+function list-ports {
+	declare ports=$(sudo firewall-cmd --list-all | grep '^[ ]*ports:' | cut -f2 -d:)
+	echo "Available ports are now: ${ports}"
+}
+
+function add-ports {
+	[[ ${#} == 0 ]] && { echo "usage: add-ports <port1> [<port2> ...<portN>]"; return 0; }
+	for port in ${@}
+	do
+		echo "Adding port ${port}"
+		sudo firewall-cmd --zone=public --add-port=${port}/tcp --permanent
+	done
+	echo "Reloading firewall"
+	sudo firewall-cmd --reload
+	list-ports
+}
+
+function load-loopback {
+	pactl load-module module-loopback
+}
+
+function unload-loopback {
+	pactl unload-module module-loopback
+}
+
+# download a youtube video 
+function download-video {
+	[[ ${#} == 1 ]] || { echo "usage: download-video URL"; return 0; }
+	yt-dlp -f 22 ${1}
+}
