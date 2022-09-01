@@ -18,7 +18,7 @@ function rick_roll {
 }
 
 function ip {
-	[[ ${#} == 1 ]] || { echo "usage: lookup <hostname>"; return 0; }
+	[[ ${#} == 1 ]] || { echo "usage: ip <hostname>"; return 0; }
 	declare hostLine=($(grep ${1} /etc/hosts))
 	echo ${hostLine[0]}
 }
