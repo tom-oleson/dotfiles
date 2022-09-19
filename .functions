@@ -37,7 +37,7 @@ function list-ports {
 }
 
 function add-ports {
-	[[ ${#} == 0 ]] && { echo "usage: add-ports <port1> [<port2> ...<portN>]"; return 0; }
+	[[ ${#} == 1 ]] || { echo "usage: add-ports <port1> [<port2> ...<portN>]"; return 0; }
 	for port in ${@}
 	do
 		echo "Adding port ${port}"
@@ -60,4 +60,9 @@ function unload-loopback {
 function download-video {
 	[[ ${#} == 1 ]] || { echo "usage: download-video URL"; return 0; }
 	yt-dlp -f 22 ${1}
+}
+
+# load vim with special note taking setup
+function notepad {
+	vim -S ~/Documents/notepads/setup.vim ${@}
 }

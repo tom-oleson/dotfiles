@@ -47,3 +47,5 @@ alias tps-trans-cert='ssh tpsadmin@tps-trans-cert'
 
 alias idea='/home/tom/idea-IC-203.7717.56/bin/idea.sh'
 
+alias magic='cd ~/Videos/magic_videos'
+alias notes='cd ~/Documents/notepads/'
