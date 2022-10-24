@@ -4,6 +4,7 @@ function add-key {
         cat ~/.ssh/id_rsa.pub | ssh ${1} "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
 }
 
+
 function ascii_clock {
 	watch -n1 "date '+%D%n%T'|figlet -W"
 
@@ -103,3 +104,10 @@ function download-video {
 function notepad {
 	vim -S ~/Documents/notepads/setup.vim ${@}
 }
+
+#show disk usage for specified directory
+function disk-usage {
+        [[ ${#} == 1 ]] || { echo "usage: disk-usage </path/to/dir>"; return 0; }
+        du -h "${1}" -d 1 | sort -n -r
+}
+

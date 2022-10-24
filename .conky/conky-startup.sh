@@ -1,5 +1,5 @@
 if [ "$SSH_CLIENT" == "" ]; then
-        #killall conky
-        sleep 20s && conky -c "$HOME/.conky/ninja_conkyrc" &
+        killall -q conky
+        sleep 5s && conky -c "$HOME/.conky/ninja_conkyrc" &
 fi
 

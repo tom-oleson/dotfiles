@@ -138,7 +138,7 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 [[ -s "/home/tom/.aliases" ]] && . ~/.aliases
 [[ -s "/home/tom/.functions" ]] && . ~/.functions
 
-# add the awc function to .basrc
+# add the awc function to .bashrc
 # use awc like this: awc "3.4+2+8+99.2" (do not forget the quotes)
 awc(){ awk "BEGIN{ print $* }" ;}
 

@@ -59,3 +59,11 @@ endif " has("autocmd")
 if has('syntax') && has('eval')
   packadd! matchit
 endif
+
+
+set columns=120         "set number of columns
+set textwidth=240       "set wrap width
+set tabstop=4           "set tab stop at 4 characters
+set expandtab           "expand tab to spaces
+set noswapfile          "do not create swap files
+
