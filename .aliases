@@ -44,6 +44,7 @@ alias tps-trans='ssh tpsadmin@tps-trans'
 alias silo='ssh tpsadmin@silo'
 alias tps-cert='ssh tpsadmin@tps-cert'
 alias tps-trans-cert='ssh tpsadmin@tps-trans-cert'
+alias mux-prod='ssh tpsadmin@mux-prod'
 
 alias idea='/home/tom/idea-IC-203.7717.56/bin/idea.sh'
 

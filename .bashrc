@@ -118,13 +118,16 @@ fi
 
 
 #make it easy to to run executables in current directory
-export PATH=./:~/bin:~/meson:~/usr/local/bin:$PATH:~/idea/idea-IC-193.6911.18/bin
+export PATH=./:~/bin:~/meson:~/usr/local/bin:$PATH:~/idea/idea-IC-193.6911.18/bin:/home/tom/.local/bin
 
 # put shell if vi mode
 set -o vi
 
 # enable autocd
 shopt -s autocd
+
+#source autojump for j convenience wrapper functions
+[[ -s "/usr/share/autojump/autojump.sh" ]] && source "/usr/share/autojump/autojump.sh"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/tom/.sdkman"
