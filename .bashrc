@@ -134,9 +134,13 @@ export SDKMAN_DIR="/home/tom/.sdkman"
 [[ -s "/home/tom/.sdkman/bin/sdkman-init.sh" ]] && source "/home/tom/.sdkman/bin/sdkman-init.sh"
 
 
-#neofetch
+#if interactive shell, run neofetch
+[[ -n "$PS1" ]] && neofetch
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+#if interactive shell then if .banner exists, cat .banner
+[ -n "$PS1" ] && ( [ -s "/home/tom/.banner" ] &&  cat /home/tom/.banner );
 
 [[ -s "/home/tom/.aliases" ]] && . ~/.aliases
 [[ -s "/home/tom/.functions" ]] && . ~/.functions
