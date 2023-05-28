@@ -30,6 +30,9 @@ alias cls='clear'
 alias s='systemctl'
 alias j='journalctl -xe'
 
+#check status of SSD trim service
+alias trim-status='sudo systemctl status fstrim.timer'
+
 # show open internet sockets
 alias inet_sockets='lsof -i -n'
 
@@ -52,8 +55,12 @@ alias mux-aws-prod='ssh mux-aws-prod'
 alias mux-aws-uat='ssh mux-aws-uat'
 
 alias key-builder='java -jar /home/tom/bin/key-builder.jar'
+alias config-builder='java -jar /home/tom/bin/config-builder.jar'
 
 alias idea='/home/tom/idea-IC-203.7717.56/bin/idea.sh'
 
 alias magic='cd ~/Videos/magic_videos'
 alias notes='cd ~/Documents/notepads/'
+alias toolkit='cd ~/Data/toolkit'
+
+alias mindbend='~/bin/mindbend -f ~/bin/mindbend.txt'
