@@ -63,7 +63,6 @@ function ip {
 
 function add-key {
 	[[ ${#} == 1 ]] || { echo "usage: add-key hostname"; return 0; }
-
 	declare userAtIp=tpsadmin@$(ip ${1})
 	echo ${userAtIp}
 	cat ~/.ssh/id_rsa.pub | ssh ${userAtIp} "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
@@ -110,4 +109,23 @@ function disk-usage {
         [[ ${#} == 1 ]] || { echo "usage: disk-usage </path/to/dir>"; return 0; }
         du -h "${1}" -d 1 | sort -n -r
 }
+
+#find all pom.xml files with specified search-string, print path and line number
+function pom-find {
+        [[ ${#} == 1 ]] || { echo "usage: pom-find <search-string>"; return 0; }
+        find . -name pom.xml -exec grep -Hn "${1}" {} \; 2>/dev/null
+}
+
+#decrypt HSM cryptogram and display its check digits
+function hsm2atm {
+        [[ ${#} == 1 ]] || { echo "usage: hsm2atm <hsm-cryptogram>"; return 0; }
+        key-builder -verbose -kek FF092EC32B44FA4D846A284E967D441D -modifier 1 -decrypt ${1}
+}
+
+#encrypt a working key using the specified atm key (atm working key --> atm comms key)
+function wk2comms {
+        [[ ${#} == 2 ]] || { echo "usage: wk2comms <atm-key> <working-key>"; return 0; }
+        key-builder -verbose -kek ${1} -modifier 0 -encrypt ${2}
+}
+
 

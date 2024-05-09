@@ -33,6 +33,9 @@ alias j='journalctl -xe'
 #check status of SSD trim service
 alias trim-status='sudo systemctl status fstrim.timer'
 
+#list of files in directory
+alias dir-list='ls -l | grep '^d' | cut -c 41-'
+
 # show open internet sockets
 alias inet_sockets='lsof -i -n'
 
@@ -54,13 +57,18 @@ alias mux-prod='ssh tpsadmin@mux-prod'
 alias mux-aws-prod='ssh mux-aws-prod'
 alias mux-aws-uat='ssh mux-aws-uat'
 
-alias key-builder='java -jar /home/tom/bin/key-builder.jar'
+alias key-builder='java -jar ~/bin/key-builder.jar'
 alias config-builder='java -jar /home/tom/bin/config-builder.jar'
+alias tps-driver='java -jar /home/tom/efxtps/tps-driver/target/tps-driver.jar'
 
-alias idea='/home/tom/idea-IC-203.7717.56/bin/idea.sh'
+alias idea='/opt/idea-IC-233.14475.28/bin/idea.sh &'
 
 alias magic='cd ~/Videos/magic_videos'
 alias notes='cd ~/Documents/notepads/'
 alias toolkit='cd ~/Data/toolkit'
+alias carnivore='cd ~/Documents/notepads/ && notepad carnivore.txt'
 
 alias mindbend='~/bin/mindbend -f ~/bin/mindbend.txt'
+
+#spreadsheets
+alias calc='libreoffice --calc&'
