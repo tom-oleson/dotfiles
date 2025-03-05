@@ -26,3 +26,6 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# add openssl-1.1.1 to library path
+export LD_LIBRARY_PATH=$HOME/opt/lib:$LD_LIBRARY_PATH
+

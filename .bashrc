@@ -77,7 +77,7 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -150,7 +150,14 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 awc(){ awk "BEGIN{ print $* }" ;}
 
 # Set up fzf key bindings and fuzzy completion
-eval "$(fzf --bash)"
+#eval "$(fzf --bash)"
+#eval "$(fzf)"
 
 # init zoxide
 eval "$(zoxide init bash)"
+
+
+# add openssl-1.1.1 to library path
+export LD_LIBRARY_PATH=$HOME/opt/lib:$LD_LIBRARY_PATH
+
+
