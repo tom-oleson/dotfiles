@@ -1,4 +1,11 @@
 
+
+#get a list of directory names
+function dir-list {
+    ls -l | awk '/^d/ {print $9}'
+}
+
+
 #add my ssh public key to the specified user@host for auto ssh login
 function add-key {
         cat ~/.ssh/id_rsa.pub | ssh ${1} "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"

@@ -134,8 +134,9 @@ export SDKMAN_DIR="/home/tom/.sdkman"
 [[ -s "/home/tom/.sdkman/bin/sdkman-init.sh" ]] && source "/home/tom/.sdkman/bin/sdkman-init.sh"
 
 
-#if interactive shell, run neofetch
-[[ -n "$PS1" ]] && neofetch
+#if interactive shell, run neofetch or fastfetch
+#[[ -n "$PS1" ]] && neofetch
+[[ -n "$PS1" ]] && fastfetch
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
