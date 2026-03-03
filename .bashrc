@@ -1,3 +1,9 @@
+#   _               _              
+#  | |__   __ _ ___| |__  _ __ ___ 
+#  | '_ \ / _` / __| '_ \| '__/ __|
+# _| |_) | (_| \__ \ | | | | | (__ 
+#(_)_.__/ \__,_|___/_| |_|_|  \___|
+#                                  
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -161,4 +167,5 @@ eval "$(zoxide init bash)"
 # add openssl-1.1.1 to library path
 export LD_LIBRARY_PATH=$HOME/opt/lib:$LD_LIBRARY_PATH
 
+echo;mindbend;echo
 
