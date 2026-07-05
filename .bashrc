@@ -94,7 +94,7 @@ fi
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alhF'
+alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -142,7 +142,7 @@ export SDKMAN_DIR="/home/tom/.sdkman"
 
 #if interactive shell, run neofetch or fastfetch
 #[[ -n "$PS1" ]] && neofetch
-[[ -n "$PS1" ]] && fastfetch
+#[[ -n "$PS1" ]] && fastfetch
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
@@ -167,5 +167,8 @@ eval "$(zoxide init bash)"
 # add openssl-1.1.1 to library path
 export LD_LIBRARY_PATH=$HOME/opt/lib:$LD_LIBRARY_PATH
 
-echo;mindbend;echo
+export LC_ALL=en_US.UTF-8
+
+#echo;mindbend;echo
+
 

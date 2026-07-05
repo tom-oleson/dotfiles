@@ -26,6 +26,13 @@ alias ..='cd ..'
 alias md='mkdir -pv'
 alias ~='cd'
 
+alias ls='ls -a --color=always --group-directories-first'
+alias rm='rm -I --preserve-root'
+alias cp='cp -i'
+alias mv='mv -i'
+alias mkdir='mkdir -p'
+alias ping='ping -c 5'
+
 alias cls='clear'
 alias bat='batcat'
 
@@ -86,8 +93,13 @@ alias toolkit='cd ~/Data/toolkit'
 alias carnivore='cd ~/Documents/notepads/ && notepad carnivore.txt'
 alias snake='cd ~/Data/projects/snake && snake'
 
+alias speak='espeak -s160 -ven-us+m4 --stdin'
 alias mindbend='~/bin/mindbend -f ~/bin/mindbend.txt'
+alias mindbend-voice='mindbend | tee /dev/tty | speak'
 
 #display image file
 alias display='feh'
+
+#run biorhytm
+alias biograph='nohup ~/Projects/python/biorhythm.py > /dev/null 2>&1 &'
 
